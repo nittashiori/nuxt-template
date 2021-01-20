@@ -4,32 +4,48 @@
       <Logo />
       <h1 class="title">nuxt-template</h1>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        <Button
+          :primary="true"
+          :secondary="false"
+          :size="medium"
+          label="Documentation"
+          @onClick="toDocument"
+        />
+        <Button
+          :primary="false"
+          :secondary="true"
+          :size="medium"
+          label="GitHub"
+          @onClick="toGithub"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Logo from '~/components/Atoms/Logo'
+import Button from '~/components/Atoms/Button'
+
+export default {
+  components: {
+    Logo,
+    Button,
+  },
+  methods: {
+    toDocument() {
+      const url = 'https://nuxtjs.org/'
+      window.location.href = url
+    },
+    toGithub() {
+      const url = 'https://github.com/nuxt/nuxt.js'
+      window.location.href = url
+    },
+  },
+}
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -45,7 +61,7 @@ export default {}
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
+  color: $gray;
   letter-spacing: 1px;
 }
 
@@ -59,5 +75,8 @@ export default {}
 
 .links {
   padding-top: 15px;
+  .button {
+    margin: 0 5px;
+  }
 }
 </style>
