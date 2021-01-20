@@ -1,5 +1,7 @@
 # nuxt-template
 
+nuxt と storybook が使えるテンプレートファイルです。
+
 ## Build Setup
 
 ```bash
