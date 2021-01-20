@@ -33,7 +33,16 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/style-resources'],
+
+  // Import SCSS
+  styleResources: {
+    scss: [
+      '@/assets/scss/variables.scss',
+      '@/assets/scss/mixins.scss',
+      '@/assets/scss/reset.scss',
+    ],
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

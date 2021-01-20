@@ -1,0 +1,42 @@
+///メディアクエリでスタイルを定義するためのmixin
+/// @param $breakpoint variablesのbreakpointsで定義した閾値
+/// @param $minmax 閾値以上か以下どちらでスタイルを適用するかを判断するための値 (min / max)
+@mixin media($breakpoint: md, $minmax: min) {
+  @if $minmax == min {
+    @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+    }
+  } @else if $minmax == max {
+    @media screen and (max-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+    }
+  }
+}
+
+/// display flexに対する設定
+/// @param {String} $wrap 折り返しの指定
+/// @param {String} $justify-content 横幅揃え
+/// @param {String} $align-items 縦幅揃え
+@mixin flex($wrap, $justify-content, $align-items) {
+  display: flex;
+  flex-wrap: $wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+/// ブラウザに依存しないフォントサイズに変換するメソッド
+/// @param {Length} $fts フォントサイズ
+@mixin fts($fts) {
+  // rem用の値に変換
+	$rem: $fts / 10;
+	font-size: #{$fts}px;
+  font-size: #{$rem}rem;
+}
+
+/// 上下左右中央配置
+@mixin center {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
