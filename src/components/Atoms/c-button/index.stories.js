@@ -1,8 +1,8 @@
-import Button from './index.vue'
+import CButton from './index.vue'
 
 export default {
-  title: 'Atoms/Button',
-  component: Button,
+  title: 'atoms/c-button',
+  component: CButton,
   argTypes: {
     size: {
       control: {
@@ -18,8 +18,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Button },
-  template: `<Button v-bind="$props" @onClick="onClick" /> `,
+  components: { CButton },
+  template: `<c-button v-bind="$props" @onClick="onClick" /> `,
 })
 
 export const Primary = Template.bind({})

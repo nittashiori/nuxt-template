@@ -1,12 +1,12 @@
-import Logo from './index.vue'
+import logo from './index.vue'
 
 export default {
-  title: 'Atoms/Logo',
-  components: Logo,
+  title: 'atoms/logo',
+  components: logo,
 }
 
 export const $default = (argTypes) => ({
   props: Object.keys(argTypes),
-  components: { Logo },
+  components: { logo },
   template: '<logo />',
 })

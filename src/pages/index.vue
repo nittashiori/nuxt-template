@@ -1,17 +1,17 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      <logo />
       <h1 class="title">nuxt-template</h1>
       <div class="links">
-        <Button
+        <c-button
           :primary="true"
           :secondary="false"
           :size="medium"
           label="Documentation"
           @onClick="toDocument"
         />
-        <Button
+        <c-button
           :primary="false"
           :secondary="true"
           :size="medium"
@@ -24,13 +24,13 @@
 </template>
 
 <script>
-import Logo from '~/components/Atoms/Logo'
-import Button from '~/components/Atoms/Button'
+import logo from '~/components/atoms/logo'
+import CButton from '~/components/atoms/c-button'
 
 export default {
   components: {
-    Logo,
-    Button,
+    logo,
+    CButton,
   },
   methods: {
     toDocument() {
