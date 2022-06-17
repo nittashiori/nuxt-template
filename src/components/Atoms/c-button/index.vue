@@ -1,9 +1,9 @@
 <template>
-  <button
+  <c-button
     type="button"
     :class="['button', { primary, secondary }, size]"
     :style="style"
-    :backgroundColor="backgroundColor"
+    :background-color="backgroundColor"
     @click="onClick"
     v-text="label"
   />
